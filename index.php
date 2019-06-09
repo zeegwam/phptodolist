@@ -1,6 +1,8 @@
 <?php
 //start a session
 session_start();
+//session_destroy();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +15,25 @@ session_start();
 <body>
 
 <div id="myDIV" class="header">
-  <h1 style="margin:5px">Things to Do</h1>
-  <input type="text" id="myInput" placeholder="Add more...">
+  <form method="POST" action="index1.php">
+  <h1 style="margin:5px">My Bucket List</h1>
+  <input type="text"  name="list" id="myInput" placeholder="Add more...">
   <span onclick="newElement()" class="addBtn">Add</span>
+  </form>
+  
 </div>
+<?php 
+if($_POST){
+$something = $_POST['list'];
+ if(isset($_SESSION['items'])){
+   $_SESSION['items'][] = $something;
+ }else{
+  $_SESSION['items'] = [];
+ }
+ var_dump($_SESSION);
+}
 
+?>
 <ul id="myUL">
   <li>Hit the gym</li>
 </ul>
@@ -78,6 +94,7 @@ function newElement() {
     }
   }
 }
+
 
 </script>
 
