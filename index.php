@@ -9,7 +9,7 @@ session_start();
     <head>
         <title> Todo App </title>
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
